@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class OnlineAccount {
     private String name;
-    private ArrayList<IChargeable> paymentMethods;
+    private ArrayList<PaymentCard> paymentMethods;
     private ArrayList<Double> transactionFees;
 
     public OnlineAccount(String name) {
@@ -15,7 +15,7 @@ public class OnlineAccount {
         return name;
     }
 
-    public ArrayList<IChargeable> getPaymentMethods() {
+    public ArrayList<PaymentCard> getPaymentMethods() {
         return paymentMethods;
     }
 
@@ -23,7 +23,7 @@ public class OnlineAccount {
         return transactionFees;
     }
 
-    public void addPaymentMethod(IChargeable card) {
+    public void addPaymentMethod(PaymentCard card) {
         this.paymentMethods.add(card);
     }
 
@@ -35,7 +35,6 @@ public class OnlineAccount {
         IChargeable cardToCharge = this.paymentMethods.get(paymentMethodIndex);
         cardToCharge.charge(transactionCost);
         Double transactionFee = cardToCharge.getTransactionFee(transactionCost);
-//    Should be able to chargeCustomer(int paymentMethodIndex, double transactionCost) via a selected paymentMethod:
-//    charging that payment method (.charge(cost)) and logging the transaction fee in the OnlineAccount's transactionFees collection.
+        addTransactionFee(transactionFee);
     }
 }
