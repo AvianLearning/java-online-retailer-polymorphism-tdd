@@ -14,5 +14,25 @@ public abstract class PaymentCard {
         this.provider = provider;
         this.charges = new ArrayList<>();
     }
-    
+
+    public int getCardNumber() {
+        return cardNumber;
+    }
+
+    public String getExpiryDate() {
+        return expiryDate;
+    }
+
+    public int getSecurityNumber() {
+        return securityNumber;
+    }
+
+    public String getProvider() {
+        return provider;
+    }
+
+    public ArrayList<Double> getCharges() {
+        return charges;
+    }
+
 }
