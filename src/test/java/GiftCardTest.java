@@ -22,5 +22,15 @@ public class GiftCardTest {
         assertEquals("John Lewis", giftCard.getVendor());
     }
 
+    @Test
+    public void chargingGiftCardReducesBalanceByPurchaseAmount() {
+        giftCard.charge(19.99);
+        assertEquals(30.01, giftCard.getBalance(), 0.01);
+    }
+
+    @Test
+    public void transactionFeeShouldBeZero() {
+        assertEquals(0, giftCard.getTransactionFee(20.00), 0.01);
+    }
 }
 
