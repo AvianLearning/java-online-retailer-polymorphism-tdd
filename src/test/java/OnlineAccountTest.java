@@ -36,7 +36,6 @@ public class OnlineAccountTest {
     @Test
     public void chargingCustomerLogsTransactionFeeInList() {
         onlineAccount.addPaymentMethod(creditCard);
-        System.out.println(onlineAccount.getPaymentMethods().get(0));
         onlineAccount.chargeCustomer(0, 100.00);
         assertEquals(1, onlineAccount.getTransactionFees().size());
         assertEquals(1.40, onlineAccount.getTransactionFees().get(0), 0.01);
