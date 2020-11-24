@@ -17,5 +17,14 @@ public class CreditCard extends PaymentCard {
         return creditLimit;
     }
 
+    @Override
+    public double getTransactionFee(double purchaseAmount) {
+        return 0;
+    }
 
+    @Override
+    public void charge(double purchaseAmount) {
+        getCharges().add(purchaseAmount);
+        this.creditLimit -= purchaseAmount;
+    }
 }

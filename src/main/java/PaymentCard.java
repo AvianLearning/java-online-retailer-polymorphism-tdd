@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public abstract class PaymentCard {
+public abstract class PaymentCard implements IChargeable {
     private int cardNumber;
     private String expiryDate;
     private int securityNumber;
