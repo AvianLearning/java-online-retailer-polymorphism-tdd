@@ -31,6 +31,21 @@ public class DebitCardTest {
         assertEquals(12344321, debitCard.getAccountNumber());
     }
 
+    @Test
+    public void chargingAddsToChargesList() {
+        debitCard.charge(34.99);
+        assertEquals(1, debitCard.getCharges().size());
+    }
 
+    @Test
+    public void chargingAddsPurchaseAmountToChargesList() {
+        debitCard.charge(34.99);
+        assertEquals(34.99, debitCard.getCharges().get(0), 0.01);
+    }
+
+    @Test
+    public void canGetCorrectTransactionFee() {
+        assertEquals(2.00, debitCard.getTransactionFee(100.00), 0.01);
+    }
 }
 

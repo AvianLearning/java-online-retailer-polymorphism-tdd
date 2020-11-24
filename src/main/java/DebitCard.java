@@ -19,11 +19,7 @@ public class DebitCard extends PaymentCard {
 
     @Override
     public double getTransactionFee(double purchaseAmount) {
-        return 0;
+        return purchaseAmount * 0.02;
     }
 
-    @Override
-    public void charge(double purchaseAmount) {
-
-    }
 }

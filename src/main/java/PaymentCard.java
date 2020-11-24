@@ -35,4 +35,7 @@ public abstract class PaymentCard implements IChargeable {
         return charges;
     }
 
+    public void charge(double purchaseAmount) {
+        getCharges().add(purchaseAmount);
+    }
 }
