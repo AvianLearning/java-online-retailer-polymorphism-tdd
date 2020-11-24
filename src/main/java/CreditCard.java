@@ -19,7 +19,8 @@ public class CreditCard extends PaymentCard {
 
     @Override
     public double getTransactionFee(double purchaseAmount) {
-        return 0;
+        double percentage = (2 * this.riskMultiplier) / 100;
+        return percentage * purchaseAmount;
     }
 
     @Override
