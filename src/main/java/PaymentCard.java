@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 public abstract class PaymentCard implements IChargeable {
-    private int cardNumber;
+    private long cardNumber;
     private String expiryDate;
     private int securityNumber;
     private String provider;
     private ArrayList<Double> charges;
 
-    public PaymentCard(int cardNumber, String expiryDate, int securityNumber, String provider) {
+    public PaymentCard(long cardNumber, String expiryDate, int securityNumber, String provider) {
         this.cardNumber = cardNumber;
         this.expiryDate = expiryDate;
         this.securityNumber = securityNumber;
@@ -15,7 +15,7 @@ public abstract class PaymentCard implements IChargeable {
         this.charges = new ArrayList<>();
     }
 
-    public int getCardNumber() {
+    public long getCardNumber() {
         return cardNumber;
     }
 

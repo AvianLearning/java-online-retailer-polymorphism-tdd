@@ -1,9 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.theories.suppliers.TestedOn;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 
 public class CreditCardTest {
 
@@ -11,12 +9,12 @@ public class CreditCardTest {
 
     @Before
     public void before() {
-        creditCard = new CreditCard(12345678, "05/25", 123, "Mastercard", 0.7, 1000.00);
+        creditCard = new CreditCard(1234567812345678L, "05/25", 123, "Mastercard", 0.7, 1000.00);
     }
 
     @Test
     public void canGetCreditCardNumber() {
-        assertEquals(12345678, creditCard.getCardNumber());
+        assertEquals(1234567812345678L, creditCard.getCardNumber());
     }
 
     @Test
