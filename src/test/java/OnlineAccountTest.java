@@ -12,7 +12,7 @@ public class OnlineAccountTest {
     @Before
     public void before() {
         onlineAccount = new OnlineAccount("Polly's Morphin'");
-        CreditCard creditCard = new CreditCard(1234567812345678L, "05/25", 123, "Mastercard", 0.7, 1000.00);
+        IChargeable creditCard = new CreditCard(1234567812345678L, "05/25", 123, "Mastercard", 0.7, 1000.00);
         onlineAccount.addPaymentMethod(creditCard);
     }
 

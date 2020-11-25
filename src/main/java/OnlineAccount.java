@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class OnlineAccount {
     private String name;
-    private ArrayList<PaymentCard> paymentMethods;
+    private ArrayList<IChargeable> paymentMethods;
     private ArrayList<Double> transactionFees;
 
     public OnlineAccount(String name) {
@@ -15,7 +15,7 @@ public class OnlineAccount {
         return name;
     }
 
-    public ArrayList<PaymentCard> getPaymentMethods() {
+    public ArrayList<IChargeable> getPaymentMethods() {
         return paymentMethods;
     }
 
@@ -23,7 +23,7 @@ public class OnlineAccount {
         return transactionFees;
     }
 
-    public void addPaymentMethod(PaymentCard card) {
+    public void addPaymentMethod(IChargeable card) {
         this.paymentMethods.add(card);
     }
 
